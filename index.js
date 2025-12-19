@@ -14,6 +14,7 @@ import userRouter from './routers/user.js';
 import publicRouter from './routers/public.js';
 
 import { adminOnly, userOnly } from './middlewares/auth.js';
+import { adminAuth } from './controllers/admin.js';
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp/' }));
 
 app.use('/', authRouter);
 app.use('/public', publicRouter);
+app.get("/admin/check",adminAuth)
 app.use('/admin', adminOnly, adminRouter);
 app.use('/user', userOnly, userRouter);
 

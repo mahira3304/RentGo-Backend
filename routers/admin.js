@@ -5,9 +5,9 @@ const { adminAuth, addCars, addCar, deleteCar, editDetails, viewReviews, viewsin
 
 const router = require('express').Router();
 
-router
-  .route("/check")
-  .get(adminAuth);
+// router
+//   .route("/check")
+//   .get(adminAuth);
 
 router
     .route('/addcar')
