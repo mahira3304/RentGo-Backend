@@ -45,6 +45,7 @@ export const updateUserProfile = async (req, res) => {
 };
 
 export const submitreview = async(req,res)=>{
+  console.log(req.body)
 
 // exports.submitreview = async(req,res)=>{
   try {

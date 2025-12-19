@@ -12,10 +12,11 @@ const router = express.Router()
 router
     .route("/profile")
     .get(getUserProfile)
-
-router
-    .route("/profile")
     .post(updateUserProfile)
+
+// router
+//     .route("/profile")
+    
 // router
 //     .route("/delete/:id")
 //     .post(deleteUser)
