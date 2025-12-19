@@ -8,18 +8,16 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 
-// Routers
 import authRouter from './routers/auth.js';
 import adminRouter from './routers/admin.js';
 import userRouter from './routers/user.js';
 import publicRouter from './routers/public.js';
 
-// Middlewares
 import { adminOnly, userOnly } from './middlewares/auth.js';
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: "https://rentgo-frontend-qiu2.onrender.com", credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static('public'));
