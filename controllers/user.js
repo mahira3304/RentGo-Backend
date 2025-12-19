@@ -122,7 +122,7 @@ export const viewuserBookings = async(req,res)=>{
     
     try {
         const user = req.user.email
-        const bookings = await Booking.findOne({email:user})
+        const bookings = await Booking.find({email:user})
         console.log(bookings)
         
         return res.json({bookings:bookings,success:true})
