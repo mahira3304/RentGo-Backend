@@ -18,7 +18,7 @@ exports.adminLogin = async (req, res) => {
         }
         const admintoken = admin.getjwt()
         return res
-            .cookie("admin", admintoken, { httpOnly: true,secure: true, path: '/admin' })
+            .cookie("admin", admintoken, { httpOnly: true,secure: true })
             .json({ success: true, role: "admin" });
 
     } catch (error) {
@@ -89,7 +89,7 @@ exports.userLogin = async (req, res) => {
         const usertoken = user.getjwt()
 
         return res
-            .cookie("user", usertoken, { httpOnly: true,secure: true,path: '/user' })
+            .cookie("user", usertoken, { httpOnly: true,secure: true })
             .json({ success: true, role: "user" });
 
     } catch (error) {
