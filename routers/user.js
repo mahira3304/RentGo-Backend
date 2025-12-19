@@ -5,9 +5,9 @@ import { userAuth, getUserProfile, updateUserProfile, submitreview, getcardetail
 
 const router = express.Router()
 
-router
-    .route('/check')
-    .get(userAuth)
+// router
+//     .route('/check')
+//     .get(userAuth)
 
 router
     .route("/profile")
