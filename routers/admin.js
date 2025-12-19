@@ -1,7 +1,7 @@
 // import express from "express";
 
 // import { adminAuth, addCar } from "../controllers/admin.js";
-const { adminAuth, addCars, addCar, deleteCar, editDetails, viewReviews, viewsingleReview, deleteReview, viewCarDetails, viewBookings, cancelBooking, viewsingleBooking } = require('../controllers/admin')
+const { adminAuth, addCars, addCar, deleteCar, editDetails, viewReviews, viewsingleReview, deleteReview, viewCarDetails, viewBookings, cancelBooking, viewsingleBooking, adminDashboard } = require('../controllers/admin')
 
 const router = require('express').Router();
 
@@ -44,5 +44,9 @@ router
 router
     .route('/viewbooking/:id')
     .get(viewsingleBooking)
+
+router
+    .route('/dashboard')
+    .get(adminDashboard)
 
 module.exports = router

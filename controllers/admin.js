@@ -159,3 +159,22 @@ exports.viewsingleBooking = async(req,res)=>{
         console.log(error)
     }
 }
+
+
+
+exports.adminDashboard = async(req,res)=>{
+    try {
+         const cars = await Car.find();
+        const bookings = await Booking.find();
+
+        return res.json({
+        success: true,
+        totalCars: cars.length,
+        totalBookings: bookings.length,
+        cars,
+        bookings
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
