@@ -26,12 +26,13 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp/' }));
 
-app.use('/', authRouter)
+
 app.use('/public', publicRouter)
 app.get("/admin/check",adminAuth)
 app.use('/admin', adminOnly, adminRouter)
 app.get("/user/check",userAuth)
 app.use('/user', userOnly, userRouter)
+app.use('/', authRouter)
 
 const PORT = 3000;
 app.listen(PORT, () => {
