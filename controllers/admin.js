@@ -166,13 +166,16 @@ exports.adminDashboard = async(req,res)=>{
     try {
          const cars = await Car.find();
         const bookings = await Booking.find();
+         const available = await Car.find({available:true})
+        const maintenance = await Car.find({maintenance:true})
+
 
         return res.json({
         success: true,
         totalCars: cars.length,
         totalBookings: bookings.length,
-        cars,
-        bookings
+        available:available.length,
+        maintenance:maintenance.length
         });
     } catch (error) {
         console.log(error)
